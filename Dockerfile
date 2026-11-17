@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y install aria2 nmap traceroute
 # 3) install packages using notebook user
 USER jovyan
 
-RUN pip install --no-cache-dir geopandas babypandas==0.1.5
+RUN pip install --no-cache-dir "numpy<2" "geopandas==0.13.2" babypandas==0.1.5
 
 # Override command to disable running jupyter notebook at launch
 CMD ["/bin/bash"]
