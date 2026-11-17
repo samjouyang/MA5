@@ -43,4 +43,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Test installed packages
         run: |
-          docker run --rm ghcr.io/samjouyang/ma5:latest bash -c "which nmap && which aria2c && which traceroute && python -c \"import geopandas, babypandas; print('geopandas', geopandas.__version__); print('babypandas', babypandas.__version__)\""
+          docker run --rm ghcr.io/samjouyang/ma5:latest bash -c "which nmap && which aria2c && which traceroute && python -c \"import geopandas, babypandas; from importlib.metadata import version; print('geopandas', geopandas.__version__); print('babypandas', version('babypandas'))\""
